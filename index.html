@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruang Sabar — Berbeda dalam Kata, Bersatu dalam Damai</title>
+  <meta name="description" content="Ruang Sabar adalah platform edukasi etika komunikasi, literasi digital, dan pencegahan ujaran kebencian berlandaskan nilai-nilai Islam dan kedamaian sesama.">
+  <meta name="keywords" content="Ruang Sabar, etika komunikasi, islam damai, anti ujaran kebencian, hate speech, tabayyun, hifzhul lisan, al-hujurat 11">
+  <meta name="author" content="Ruang Sabar">
+
+  <!-- Favicon Sederhana & Elegan -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'></path><path d='M12 7v4'></path><path d='M12 15h.01'></path></svg>">
+
+  <!-- Google Fonts: Inter & Amiri (Tulisan Arab Al-Qur'an) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#172554',
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#172554',
+              950: '#0f172a',
+            },
+            softblue: {
+              DEFAULT: '#DBEAFE',
+              50: '#f8fafc',
+              100: '#DBEAFE',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+            },
+            emerald: {
+              DEFAULT: '#10B981',
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10B981',
+              600: '#059669',
+              700: '#047857',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            arabic: ['Amiri', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-slate-800 antialiased font-sans selection:bg-softblue selection:text-navy-900">
+
+  <!-- =======================================================================
+       1. NAVBAR
+       ======================================================================= -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-lg p-1" aria-label="Ruang Sabar Beranda">
+          <div class="w-10 h-10 rounded-xl bg-navy-900 text-emerald-400 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+            <!-- Ikon Dialog & Perdamaian -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              <path d="M9 10h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M15 10h.01"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold text-navy-900 tracking-tight flex items-center gap-1">
+              Ruang Sabar
+              <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+            </span>
+            <span class="text-[10px] text-slate-500 uppercase tracking-wider block font-semibold -mt-1">
+              Etika & Perdamaian
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8" aria-label="Navigasi Utama">
+          <a href="#hero" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors focus:outline-none focus:text-navy-900">Beranda</a>
+          <a href="#edukasi" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors focus:outline-none focus:text-navy-900">Edukasi</a>
+          <a href="#dalil" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors focus:outline-none focus:text-navy-900">Dalil Islam</a>
+          <a href="#panduan" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors focus:outline-none focus:text-navy-900">Panduan</a>
+          <a href="#kuis" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors focus:outline-none focus:text-navy-900">Kuis Refleksi</a>
+          <a href="#tentang" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors focus:outline-none focus:text-navy-900">Tentang</a>
+        </nav>
+
+        <!-- CTA Button Desktop -->
+        <div class="hidden md:flex items-center">
+          <a href="#edukasi" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-navy-900 hover:bg-slate-800 shadow-sm hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-900">
+            <span>Mulai Belajar</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex items-center md:hidden">
+          <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-lg text-slate-600 hover:text-navy-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-navy-900" aria-label="Buka menu navigasi" aria-expanded="false">
+            <i id="menu-icon" data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-2">
+      <a href="#hero" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Beranda</a>
+      <a href="#edukasi" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Edukasi</a>
+      <a href="#dalil" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Dalil Islam</a>
+      <a href="#panduan" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Panduan</a>
+      <a href="#kuis" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Kuis Refleksi</a>
+      <a href="#tentang" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-navy-900">Tentang</a>
+      <div class="pt-2">
+        <a href="#edukasi" class="w-full flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-navy-900 hover:bg-slate-800">
+          Mulai Belajar Sekarang
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         2. HERO SECTION
+         ======================================================================= -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Text Content -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <!-- Badge Tagline -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-softblue/60 border border-blue-200 text-navy-900 text-xs md:text-sm font-medium">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Berbeda dalam Kata, Bersatu dalam Damai.</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-900 tracking-tight leading-[1.15]">
+              Sebelum Berkata, <br class="hidden sm:inline">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-navy-900 via-blue-900 to-emerald-600">
+                Belajar Memahami.
+              </span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Ruang Sabar adalah ruang belajar untuk memahami pentingnya menjaga lisan, menghargai perbedaan, dan menciptakan lingkungan digital yang bebas dari ujaran kebencian melalui nilai-nilai Islam.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              <a href="#edukasi" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-base font-semibold text-white bg-navy-900 hover:bg-slate-800 shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-900">
+                <span>Mulai Belajar</span>
+                <i data-lucide="book-open" class="w-4 h-4 ml-2"></i>
+              </a>
+              <a href="#panduan" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-base font-semibold text-navy-900 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:border-slate-300 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-300">
+                <span>Jelajahi Panduan</span>
+                <i data-lucide="compass" class="w-4 h-4 ml-2 text-slate-500"></i>
+              </a>
+            </div>
+
+            <!-- Highlights Bar -->
+            <div class="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+              <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-50 text-navy-900 flex items-center justify-center shrink-0">
+                  <i data-lucide="check-check" class="w-4 h-4 text-emerald-600"></i>
+                </div>
+                <div>
+                  <h2 class="text-xs font-bold text-navy-900">Budaya Tabayyun</h2>
+                  <p class="text-[11px] text-slate-500">Cek fakta sebelum sebar</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+                  <i data-lucide="heart" class="w-4 h-4 text-emerald-600"></i>
+                </div>
+                <div>
+                  <h2 class="text-xs font-bold text-navy-900">Hifzhul Lisan</h2>
+                  <p class="text-[11px] text-slate-500">Menjaga lisan & jemari</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-softblue/60 text-navy-900 flex items-center justify-center shrink-0">
+                  <i data-lucide="users" class="w-4 h-4 text-blue-700"></i>
+                </div>
+                <div>
+                  <h2 class="text-xs font-bold text-navy-900">Adab Berikhtilaf</h2>
+                  <p class="text-[11px] text-slate-500">Hargai beda pandangan</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Illustration Graphic -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <!-- Decorative Backing -->
+              <div class="absolute -inset-1 bg-gradient-to-r from-softblue via-emerald-100 to-blue-100 rounded-3xl blur-xl opacity-70"></div>
+              
+              <!-- Card Frame -->
+              <div class="relative bg-white p-3 rounded-2xl shadow-xl border border-slate-200/80 overflow-hidden group">
+                <img 
+                  src="assets/images/hero-dialogue.jpg" 
+                  alt="Ilustrasi komunikasi positif, santun, dan saling menghargai di era digital" 
+                  class="w-full h-auto rounded-xl object-cover transform transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="eager"
+                  width="1280"
+                  height="720"
+                >
+                <div class="p-3 bg-slate-50/80 rounded-b-xl border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                  <span class="flex items-center gap-1.5 font-medium text-navy-900">
+                    <i data-lucide="message-square-heart" class="w-4 h-4 text-emerald-600"></i>
+                    Dialog Santun & Konstruktif
+                  </span>
+                  <span class="text-[11px] text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200 font-semibold">
+                    QS. Al-Hujurat: 11
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. SECTION EDUKASI
+         ======================================================================= -->
+    <section id="edukasi" class="py-20 md:py-28 bg-white border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-softblue/70 text-navy-900 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="book-open-check" class="w-3.5 h-3.5 text-navy-900"></i>
+            Ruang Literasi Digital
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+            Memahami Sebelum Menghakimi
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg">
+            Pelajari konsep esensial seputar ujaran kebencian, pahami akibat buruknya pada kehidupan nyata, dan teladani tuntunan Islam dalam merawat keharmonisan sosial.
+          </p>
+        </div>
+
+        <!-- 3 Educational Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Mengenal Ujaran Kebencian -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-7 flex flex-col justify-between shadow-xs">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-blue-100 text-navy-900 flex items-center justify-center mb-5">
+                <i data-lucide="shield-alert" class="w-6 h-6 text-navy-900"></i>
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Materi 01</span>
+              <h3 class="text-xl font-bold text-navy-900 mt-1 mb-3">Mengenal Ujaran Kebencian</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Ujaran kebencian (<em>hate speech</em>) adalah provokasi atau penghinaan berbasis identitas SARA. Pahami perbedaannya secara tegas dengan kritik santun yang konstruktif.
+              </p>
+            </div>
+            <div>
+              <button 
+                type="button" 
+                data-open-modal="mengenal-ujaran"
+                class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-navy-900 bg-white hover:bg-softblue/50 border border-slate-200 hover:border-blue-300 transition-all focus:outline-none focus:ring-2 focus:ring-navy-900"
+                aria-haspopup="dialog"
+              >
+                <span>Pelajari Lebih Lanjut</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Dampak Ujaran Kebencian -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-7 flex flex-col justify-between shadow-xs">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-5">
+                <i data-lucide="heart-crack" class="w-6 h-6 text-amber-700"></i>
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Materi 02</span>
+              <h3 class="text-xl font-bold text-navy-900 mt-1 mb-3">Dampak Ujaran Kebencian</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Komentar beracun tidak hanya melukai mental korban, tetapi juga meretakkan silaturahmi, memicu perpecahan bangsa, dan merusak ekosistem digital.
+              </p>
+            </div>
+            <div>
+              <button 
+                type="button" 
+                data-open-modal="dampak-ujaran"
+                class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-navy-900 bg-white hover:bg-softblue/50 border border-slate-200 hover:border-blue-300 transition-all focus:outline-none focus:ring-2 focus:ring-navy-900"
+                aria-haspopup="dialog"
+              >
+                <span>Pelajari Lebih Lanjut</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Islam Mengajarkan Kedamaian -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-7 flex flex-col justify-between shadow-xs">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-5">
+                <i data-lucide="sparkles" class="w-6 h-6 text-emerald-600"></i>
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Materi 03</span>
+              <h3 class="text-xl font-bold text-navy-900 mt-1 mb-3">Islam Mengajarkan Kedamaian</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Telusuri 6 kaidah komunikasi Al-Qur'an (<em>qaulan sadida, layyina, baligha</em>), keutamaan <em>hifzhul lisan</em>, dan prinsip memuliakan seluruh umat manusia.
+              </p>
+            </div>
+            <div>
+              <button 
+                type="button" 
+                data-open-modal="islam-kedamaian"
+                class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-navy-900 bg-white hover:bg-softblue/50 border border-slate-200 hover:border-blue-300 transition-all focus:outline-none focus:ring-2 focus:ring-navy-900"
+                aria-haspopup="dialog"
+              >
+                <span>Pelajari Lebih Lanjut</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. SECTION DALIL ISLAM
+         ======================================================================= -->
+    <section id="dalil" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200/80">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="book-marked" class="w-3.5 h-3.5 text-emerald-700"></i>
+            Tuntunan Al-Qur'an
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+            Jaga Lisan, Jaga Persaudaraan
+          </h2>
+          <p class="text-slate-600 text-base">
+            Al-Qur'an secara eksplisit melarang segala bentuk olok-olok, caci maki, dan pemberian julukan buruk yang merendahkan martabat sesama.
+          </p>
+        </div>
+
+        <!-- Dalil Card Utama -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-lg relative overflow-hidden">
+          <!-- Subtle Accent Bar -->
+          <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-navy-900 via-blue-800 to-emerald-500"></div>
+
+          <!-- Header Dalil -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">
+                Kaidah Akhlak Komunikasi
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold text-navy-900 mt-2">
+                Surah Al-Hujurat [49] : Ayat 11
+              </h3>
+            </div>
+            <div class="text-xs text-slate-500 flex items-center gap-1">
+              <i data-lucide="scroll" class="w-4 h-4 text-slate-400"></i>
+              Mushaf Standar Indonesia
+            </div>
+          </div>
+
+          <!-- Teks Arab Al-Qur'an -->
+          <div class="py-8 my-2">
+            <p class="font-quran text-2xl sm:text-3xl md:text-4xl text-navy-900 leading-[2.4] sm:leading-[2.6] text-right" lang="ar">
+              يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا يَسْخَرْ قَوْمٌۭ مِّن قَوْمٍ عَسَىٰٓ أَن يَكُونُوا۟ خَيْرًۭا مِّنْهُمْ وَلَا نِسَآءٌۭ مِّن نِّسَآءٍ عَسَىٰٓ أَن يَكُنَّ خَيْرًۭا مِّنْهُنَّ ۖ وَلَا تَلْمِزُوٓا۟ أَنفُسَكُمْ وَلَا تَنَابَزُوا۟ بِٱلْأَلْقَٰبِ ۖ بِئْسَ ٱلِٱسْمُ ٱلْفُسُوقُ بَعْدَ ٱلْإِيمَٰنِ ۚ وَمَن لَّمْ يَتُبْ فَأُو۟لَٰٓئِكَ هُمُ ٱلظَّٰلِمُونَ
+            </p>
+          </div>
+
+          <!-- Terjemahan Resmi Bahasa Indonesia -->
+          <div class="bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-2 flex items-center gap-1.5">
+              <i data-lucide="languages" class="w-4 h-4 text-navy-900"></i>
+              Terjemahan Bahasa Indonesia:
+            </h4>
+            <blockquote class="text-slate-700 text-sm sm:text-base leading-relaxed italic">
+              "Wahai orang-orang yang beriman! Janganlah suatu kaum mengolok-olok kaum yang lain (karena) boleh jadi mereka (yang diperolok-olokkan) lebih baik dari mereka (yang mengolok-olok) dan jangan pula perempuan-perempuan (mengolok-olokkan) perempuan lain (karena) boleh jadi perempuan (yang diperolok-olokkan) lebih baik dari perempuan (yang mengolok-olok). Janganlah kamu saling mencela satu sama lain dan janganlah saling memanggil dengan gelar-gelar yang buruk. Seburuk-buruk panggilan adalah (panggilan) yang buruk (fasik) setelah beriman. Dan barangsiapa tidak bertobat, maka mereka itulah orang-orang yang zalim."
+            </blockquote>
+            <p class="text-xs font-semibold text-slate-500 mt-2 text-right">
+              — Terjemahan Kementerian Agama Republik Indonesia (QS. Al-Hujurat: 11)
+            </p>
+          </div>
+
+          <!-- Penjelasan Kontekstual & Relevansi Ujaran Kebencian -->
+          <div class="mt-8 pt-6 border-t border-slate-100 space-y-4">
+            <h4 class="text-base font-bold text-navy-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              Pelajaran Penting bagi Warganet Era Digital:
+            </h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-600">
+              <div class="p-3.5 bg-white border border-slate-200 rounded-xl">
+                <strong class="text-navy-900 block font-semibold mb-1">1. Larangan Mengolok-olok (Lā Yaskhar)</strong>
+                Jangan merasa diri lebih suci, pintar, atau mulia daripada orang lain. Menertawakan kekurangan orang lain adalah bibit kesombongan.
+              </div>
+              <div class="p-3.5 bg-white border border-slate-200 rounded-xl">
+                <strong class="text-navy-900 block font-semibold mb-1">2. Larangan Mencela Sesama (Lā Talmizū)</strong>
+                Al-Qur'an menggunakan redaksi "mencela diri sendiri", menegaskan bahwa menyakiti martabat orang lain hakikatnya merusak kehormatan diri sendiri.
+              </div>
+              <div class="p-3.5 bg-white border border-slate-200 rounded-xl">
+                <strong class="text-navy-900 block font-semibold mb-1">3. Larangan Julukan Buruk (Lā Tanābazū)</strong>
+                Relevan dengan maraknya *cyberbullying*, pelecehan fisik (*body shaming*), serta pelabelan peyoratif terhadap kelompok berbeda di media sosial.
+              </div>
+            </div>
+
+            <!-- Hadits Pendukung -->
+            <div class="mt-4 p-4 rounded-xl bg-blue-50/70 border border-blue-200 text-xs sm:text-sm text-navy-900 flex items-start gap-3">
+              <i data-lucide="quote" class="w-5 h-5 text-blue-700 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="font-bold">Hadits Pengingat:</span>
+                <em>"Barangsiapa yang beriman kepada Allah dan hari akhir, hendaklah ia berkata yang baik atau (jika tidak bisa) hendaklah ia diam."</em>
+                <span class="text-slate-500 block text-xs mt-0.5">(HR. Bukhari no. 6018 & Muslim no. 47)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. SECTION PANDUAN
+         ======================================================================= -->
+    <section id="panduan" class="py-20 md:py-28 bg-white border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-softblue/70 text-navy-900 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="compass" class="w-3.5 h-3.5 text-navy-900"></i>
+            Pedoman Praktis Sehari-Hari
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+            Mulai dari Kata-Kata yang Baik
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg">
+            Enam langkah aplikatif yang dapat langsung kamu terapkan setiap kali berinteraksi di ruang publik, obrolan keluarga, maupun media sosial.
+          </p>
+        </div>
+
+        <!-- Interactive Tracker Banner -->
+        <div class="max-w-xl mx-auto mb-12 p-4 bg-slate-50 border border-slate-200 rounded-2xl">
+          <div class="flex items-center justify-between text-xs font-bold text-navy-900 mb-2">
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+              Komitmen Lisan Santun
+            </span>
+            <span id="checklist-progress-text" class="text-emerald-700 font-semibold">0 dari 6 Langkah Dipraktikkan</span>
+          </div>
+          <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
+            <div id="checklist-progress-bar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div id="checklist-celebration" class="hidden mt-3 p-2 bg-emerald-100 border border-emerald-300 rounded-lg text-center text-xs font-semibold text-emerald-800">
+            🎉 MasyaAllah! Kamu telah menyetujui dan memahami seluruh 6 komitmen etika komunikasi Ruang Sabar.
+          </div>
+        </div>
+
+        <!-- 6 Panduan Cards / Checklist Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Panduan 1 -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-navy-900 flex items-center justify-center font-bold text-sm mb-4">
+                01
+              </div>
+              <h3 class="text-lg font-bold text-navy-900 mb-2">Berpikir Sebelum Berkomentar</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Terapkan rumus <strong>T.H.I.N.K</strong>: Apakah ucapan ini Benar (<em>True</em>), Bermanfaat (<em>Helpful</em>), Menginspirasi (<em>Inspiring</em>), Perlu (<em>Necessary</em>), dan Santun (<em>Kind</em>)?
+              </p>
+            </div>
+            <button type="button" class="guide-card-btn w-full py-2.5 px-3 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 text-xs font-semibold transition-all flex items-center justify-center gap-2" data-checked="false">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span class="check-label">Tandai Telah Dipahami</span>
+            </button>
+          </div>
+
+          <!-- Panduan 2 -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-navy-900 flex items-center justify-center font-bold text-sm mb-4">
+                02
+              </div>
+              <h3 class="text-lg font-bold text-navy-900 mb-2">Tabayyun & Periksa Fakta</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Jangan langsung percaya judul bombastis atau potongan video provokatif. Telusuri konteks lengkapnya sebelum ikut membagikan kabar tersebut.
+              </p>
+            </div>
+            <button type="button" class="guide-card-btn w-full py-2.5 px-3 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 text-xs font-semibold transition-all flex items-center justify-center gap-2" data-checked="false">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span class="check-label">Tandai Telah Dipahami</span>
+            </button>
+          </div>
+
+          <!-- Panduan 3 -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-navy-900 flex items-center justify-center font-bold text-sm mb-4">
+                03
+              </div>
+              <h3 class="text-lg font-bold text-navy-900 mb-2">Hindari Hinaan SARA & Fisik</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Menyerang suku, agama, ras, atau bentuk fisik seseorang bukan bentuk humor. Itu adalah pelecehan martabat yang diharamkan syariat.
+              </p>
+            </div>
+            <button type="button" class="guide-card-btn w-full py-2.5 px-3 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 text-xs font-semibold transition-all flex items-center justify-center gap-2" data-checked="false">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span class="check-label">Tandai Telah Dipahami</span>
+            </button>
+          </div>
+
+          <!-- Panduan 4 -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-navy-900 flex items-center justify-center font-bold text-sm mb-4">
+                04
+              </div>
+              <h3 class="text-lg font-bold text-navy-900 mb-2">Hormati Perbedaan Pendapat</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Beda sudut pandang adalah hal lumrah. Bantah argumen dengan logika dan data yang valid, bukan dengan mencela pribadi orang yang berbicara.
+              </p>
+            </div>
+            <button type="button" class="guide-card-btn w-full py-2.5 px-3 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 text-xs font-semibold transition-all flex items-center justify-center gap-2" data-checked="false">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span class="check-label">Tandai Telah Dipahami</span>
+            </button>
+          </div>
+
+          <!-- Panduan 5 -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-navy-900 flex items-center justify-center font-bold text-sm mb-4">
+                05
+              </div>
+              <h3 class="text-lg font-bold text-navy-900 mb-2">Jadikan Medsos Ladang Kebaikan</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Gunakan jemari untuk berbagi inspirasi, menyemangati sesama, mengapresiasi karya, dan menyebarkan pesan perdamaian yang menenteramkan hati.
+              </p>
+            </div>
+            <button type="button" class="guide-card-btn w-full py-2.5 px-3 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 text-xs font-semibold transition-all flex items-center justify-center gap-2" data-checked="false">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span class="check-label">Tandai Telah Dipahami</span>
+            </button>
+          </div>
+
+          <!-- Panduan 6 -->
+          <div class="card-hover bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-navy-900 flex items-center justify-center font-bold text-sm mb-4">
+                06
+              </div>
+              <h3 class="text-lg font-bold text-navy-900 mb-2">Tanggapi Konflik dengan Tenang</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Bila dipancing kemarahan, berhentilah sejenak. Jangan membalas api dengan api. Menahan emosi adalah bukti kedewasaan dan kekuatan iman.
+              </p>
+            </div>
+            <button type="button" class="guide-card-btn w-full py-2.5 px-3 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 text-xs font-semibold transition-all flex items-center justify-center gap-2" data-checked="false">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span class="check-label">Tandai Telah Dipahami</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. SECTION INTERAKTIF: THINK BEFORE YOU POST (KUIS)
+         ======================================================================= -->
+    <section id="kuis" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200/80">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-emerald-700"></i>
+            Kuis Interaktif Refleksi Diri
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+            Think Before You Post
+          </h2>
+          <p class="text-slate-600 text-base">
+            Uji refleks digitalmu dalam menghadapi situasi sehari-hari di media sosial. Temukan seberapa bijak kamu menjaga lisan dan jemari di dunia maya.
+          </p>
+        </div>
+
+        <!-- Quiz Container Card -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-lg">
+          
+          <!-- Top Progress Tracker -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
+              <span class="text-navy-900 font-semibold" id="quiz-category">Situasi 1: Perbedaan Pandangan</span>
+              <span>Pertanyaan <span id="quiz-question-number" class="text-emerald-600 font-bold">1</span> dari <span id="quiz-question-total">5</span></span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+              <div id="quiz-progress-bar" class="bg-emerald-500 h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+            </div>
+          </div>
+
+          <!-- Active Quiz Screen -->
+          <div id="quiz-box" class="space-y-6">
+            <!-- Scenario Card -->
+            <div class="p-4 sm:p-5 bg-blue-50/60 rounded-2xl border border-blue-100">
+              <div class="text-xs font-bold uppercase tracking-wider text-navy-900 mb-1 flex items-center gap-1.5">
+                <i data-lucide="smartphone" class="w-4 h-4 text-blue-700"></i>
+                Studi Kasus Nyata:
+              </div>
+              <p id="quiz-scenario" class="text-slate-800 text-sm sm:text-base font-medium leading-relaxed">
+                Memuat skenario...
+              </p>
+            </div>
+
+            <!-- Question Prompt -->
+            <div>
+              <h3 id="quiz-prompt" class="text-base sm:text-lg font-bold text-navy-900">
+                Apa tindakan yang sebaiknya kamu lakukan?
+              </h3>
+            </div>
+
+            <!-- Options Container (populated by script.js) -->
+            <div id="quiz-options-container" class="space-y-3" role="radiogroup" aria-label="Pilihan respons kuis">
+              <!-- Opsi tombol dibuat secara dinamis -->
+            </div>
+
+            <!-- Feedback Card (Muncul setelah memilih jawaban) -->
+            <div id="quiz-feedback-card" class="hidden">
+              <div id="quiz-feedback-status"></div>
+              <p id="quiz-feedback-text" class="text-slate-700 text-xs sm:text-sm leading-relaxed mt-1"></p>
+            </div>
+
+            <!-- Next Button -->
+            <div class="pt-2 flex justify-end">
+              <button 
+                id="quiz-next-btn" 
+                type="button" 
+                class="hidden inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-navy-900 hover:bg-slate-800 shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-navy-900"
+              >
+                <span>Pertanyaan Selanjutnya</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Result Screen (Muncul di akhir kuis) -->
+          <div id="quiz-result-card" class="hidden text-center py-6 space-y-6">
+            <div class="w-20 h-20 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border-4 border-emerald-100 shadow-inner">
+              <i data-lucide="award" class="w-10 h-10"></i>
+            </div>
+
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Skor Keseluruhan Anda</span>
+              <div class="text-5xl sm:text-6xl font-extrabold text-navy-900 my-2">
+                <span id="quiz-result-score">0</span><span class="text-2xl text-slate-400 font-normal">/100</span>
+              </div>
+              <div id="quiz-result-badge" class="mt-2">
+                <!-- Badge predikat -->
+              </div>
+            </div>
+
+            <p id="quiz-result-summary" class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              Hasil refleksi kamu akan ditampilkan di sini.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button 
+                id="quiz-restart-btn" 
+                type="button" 
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-navy-900 hover:bg-slate-800 shadow-md transition-all"
+              >
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                <span>Ulangi Kuis</span>
+              </button>
+              <a 
+                href="#panduan" 
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-all"
+              >
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>Baca Panduan Lagi</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. SECTION TENTANG
+         ======================================================================= -->
+    <section id="tentang" class="py-20 md:py-28 bg-white border-t border-slate-100">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-softblue/70 text-navy-900 text-xs font-semibold uppercase tracking-wider">
+              <i data-lucide="info" class="w-3.5 h-3.5 text-navy-900"></i>
+              Profil & Visi
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+              Tentang Ruang Sabar
+            </h2>
+
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+              Ruang Sabar hadir sebagai media edukasi untuk mengajak masyarakat membangun komunikasi yang lebih santun, menghargai perbedaan, dan menghindari ujaran kebencian. Kami percaya bahwa perubahan menuju lingkungan yang lebih damai dapat dimulai dari cara kita berbicara dan memperlakukan sesama.
+            </p>
+
+            <div class="space-y-3 pt-2 text-sm text-slate-700">
+              <div class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-3 h-3"></i>
+                </div>
+                <span><strong>Inklusif & Damai:</strong> Terbuka untuk seluruh kalangan warganet tanpa membeda-bedakan latar belakang.</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-3 h-3"></i>
+                </div>
+                <span><strong>Nilai Islam Rahmatan lil 'Alamin:</strong> Mengedepankan kasih sayang, dialog hikmah, dan perlindungan kehormatan manusia.</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-3 h-3"></i>
+                </div>
+                <span><strong>Edukasi Berkelanjutan:</strong> Menginspirasi aksi nyata dari lingkup paling sederhana: jemari dan lisan kita sendiri.</span>
+              </div>
+            </div>
+
+            <!-- Disclaimer Bebas Klaim Lembaga Tertentu -->
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-500 leading-relaxed mt-4">
+              <strong>Catatan Independensi:</strong> Ruang Sabar adalah inisiatif pembelajaran nirlaba dan mandiri di bidang etika digital dan nilai-nilai perdamaian. Platform ini tidak berafiliasi secara resmi dengan partai politik, ormas tertentu, maupun lembaga birokrasi pemerintahan.
+            </div>
+          </div>
+
+          <!-- Card Quote Filosofi -->
+          <div class="lg:col-span-5">
+            <div class="p-8 rounded-3xl bg-navy-900 text-white shadow-xl relative overflow-hidden">
+              <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl"></div>
+              
+              <i data-lucide="quote" class="w-10 h-10 text-emerald-400 mb-6 opacity-80"></i>
+
+              <blockquote class="text-base sm:text-lg font-medium leading-relaxed mb-6">
+                "Kata-kata yang santun menyejukkan jiwa laksana embun pagi. Kebencian yang ditabur hari ini akan menuai badai esok hari. Mari memilih menjadi penyebar damai."
+              </blockquote>
+
+              <div class="border-t border-slate-700 pt-4 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-800 text-emerald-400 flex items-center justify-center font-bold">
+                  RS
+                </div>
+                <div>
+                  <div class="font-bold text-sm">Ruang Sabar</div>
+                  <div class="text-xs text-slate-400">Media Edukasi Etika Digital</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       8. FOOTER
+       ======================================================================= -->
+  <footer class="bg-navy-950 text-slate-300 border-t border-slate-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Kolom Brand -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-navy-900 text-emerald-400 flex items-center justify-center border border-slate-700">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <path d="M9 10h.01"></path>
+                <path d="M12 10h.01"></path>
+                <path d="M15 10h.01"></path>
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white tracking-tight">Ruang Sabar</span>
+          </div>
+
+          <p class="text-emerald-400 text-sm font-semibold">
+            "Berbeda dalam Kata, Bersatu dalam Damai."
+          </p>
+
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            Ruang belajar untuk memahami pentingnya menjaga lisan, menghormati perbedaan, dan menciptakan iklim media sosial yang beradab dan damai.
+          </p>
+        </div>
+
+        <!-- Kolom Navigasi Cepat -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Navigasi Halaman</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+            <li><a href="#hero" class="hover:text-emerald-400 transition-colors">Beranda</a></li>
+            <li><a href="#edukasi" class="hover:text-emerald-400 transition-colors">Edukasi Ujaran Kebencian</a></li>
+            <li><a href="#dalil" class="hover:text-emerald-400 transition-colors">Dalil QS. Al-Hujurat 11</a></li>
+            <li><a href="#panduan" class="hover:text-emerald-400 transition-colors">Panduan Praktis</a></li>
+            <li><a href="#kuis" class="hover:text-emerald-400 transition-colors">Kuis Refleksi Diri</a></li>
+            <li><a href="#tentang" class="hover:text-emerald-400 transition-colors">Tentang Ruang Sabar</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom Prinsip Islam -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Prinsip Komunikasi Islami</h4>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            Menegakkan <em>Qaul Sadid</em> (jujur), <em>Qaul Baligh</em> (tepat sasaran), <em>Qaul Ma'ruf</em> (pantas), dan <em>Qaul Layyin</em> (lemah lembut) dalam setiap ketikan jemari kita.
+          </p>
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 text-[11px] text-slate-400">
+            <span class="text-emerald-400 font-semibold block mb-0.5">Misi Mulia:</span>
+            Mencegah ujaran kebencian, merawat persaudaraan kebangsaan dan kemanusiaan.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>
+          &copy; <span id="current-year"></span> Ruang Sabar. Seluruh hak cipta dilindungi.
+        </p>
+        <p class="text-slate-500 text-center sm:text-right">
+          Dibangun dengan kepedulian terhadap kedamaian lisan dan persatuan bangsa.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       9. REUSABLE EDUCATIONAL DETAIL MODAL DIALOG
+       ======================================================================= -->
+  <div 
+    id="education-modal" 
+    class="modal-overlay fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    tabindex="-1"
+  >
+    <div id="modal-card" class="modal-container bg-white w-full max-w-2xl max-h-[90vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-slate-200">
+      
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-slate-100 flex items-start justify-between bg-slate-50/80">
+        <div>
+          <span id="modal-badge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-navy-900">
+            Kategori Materi
+          </span>
+          <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-navy-900 mt-2">
+            Judul Materi Edukasi
+          </h3>
+          <p id="modal-subtitle" class="text-xs sm:text-sm text-slate-500 mt-1">
+            Ringkasan materi
+          </p>
+        </div>
+        <button 
+          type="button" 
+          class="close-modal-btn p-2 rounded-xl text-slate-400 hover:text-navy-900 hover:bg-slate-200/60 focus:outline-none focus:ring-2 focus:ring-navy-900"
+          aria-label="Tutup modal dialog"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div id="modal-body" class="p-6 overflow-y-auto space-y-4">
+        <!-- Konten edukasi dimasukkan secara dinamis melalui script.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 sm:px-6 bg-slate-50 border-t border-slate-100 flex justify-end">
+        <button 
+          type="button" 
+          class="close-modal-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-navy-900 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-navy-900"
+        >
+          Tutup & Kembali
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       10. FLOATING BACK TO TOP BUTTON
+       ======================================================================= -->
+  <button 
+    id="back-to-top" 
+    type="button" 
+    class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-navy-900 text-white shadow-xl hover:bg-slate-800 transition-all opacity-0 pointer-events-none focus:outline-none focus:ring-2 focus:ring-emerald-400"
+    aria-label="Kembali ke atas halaman"
+  >
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- Script JS Interaktif -->
+  <script src="js/script.js"></script>
+</body>
+</html>
